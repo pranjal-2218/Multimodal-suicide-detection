@@ -74,7 +74,7 @@ Audio Input ───────► Frozen Whisper Encoder ├─────�
 | `final_suicidal_report.pdf` | Cross-validation report: per-fold and aggregated results |
 | `final_suicidal_summary.pdf` | Per-epoch validation metrics and summary figures |
 
-The **audio files (~1 GB)** are not stored in this repository; see below.
+The **audio files (~1 GB)** are not stored in this repository because they contain sensitive recordings; see [Audio files](#audio-files-available-on-request).
 
 ---
 
@@ -95,11 +95,17 @@ The **audio files (~1 GB)** are not stored in this repository; see below.
 
 The CSV references **406 unique `.wav` files**; some files are used by more than one row.
 
-### Downloading the audio
+### Audio files: available on request
 
-📥 **Audio files:** [Google Drive folder](https://drive.google.com/drive/folders/1y-_uXBG6HZI-dOqda5La-panVy952ftz?usp=sharing)
+The audio files (~1 GB) are **not publicly distributed**. They contain sensitive personal information (voice recordings), so access is granted on request for **study and research purposes only**.
 
-The `audio` column holds **bare file names**, which the notebook resolves relative to the **current working directory**. Put all `.wav` files in the folder the notebook runs from (in Google Colab this is `/content/`).
+- About 200 recordings are of **9 student volunteers** and were recorded with their **full consent**.
+- The remaining audio consists of clips taken from an existing dataset and trimmed for this project. *(DAIC-WOZ Database - https://dcapswoz.ict.usc.edu/#download-section)*
+- Please do not redistribute the audio, attempt to identify the speakers, or use it for any purpose other than study.
+
+📧 **To request access, email:** `pranjalk880@gmail.com` with your name, affiliation and intended use.
+
+Once you have the files, the `audio` column holds **bare file names**, which the notebook resolves relative to the **current working directory**. Put all `.wav` files in the folder the notebook runs from (in Google Colab this is `/content/`).
 
 > ⚠️ **If an audio file cannot be found or read, the notebook silently replaces it with 1 second of silence and keeps running.** The audio results are only valid if every file loads, so run the [audio check](#2-verify-the-audio-files) before training.
 
@@ -125,7 +131,7 @@ The first run downloads `xlm-roberta-base` and `openai/whisper-small` from Huggi
 
 ### 2. Verify the audio files
 
-Place the downloaded `.wav` files in your working directory, then run this in a notebook cell (or Python) before training:
+Place the `.wav` files you received in your working directory, then run this in a notebook cell (or Python) before training:
 
 ```python
 import os, pandas as pd
